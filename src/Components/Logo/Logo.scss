@@ -1,0 +1,14 @@
+.logo {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    column-gap: 12px;
+    align-items: center;
+    
+    img {
+        max-width: 54px;
+    }
+
+    h1 {
+        text-align: left;
+    }
+}

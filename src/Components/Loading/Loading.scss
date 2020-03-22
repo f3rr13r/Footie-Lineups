@@ -1,0 +1,41 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+
+    .football {
+        max-width: 100px;
+        animation: Football-up-and-down infinite 1s ease-in-out;
+        align-self: flex-end;
+    }
+
+    .boot {
+        max-width: 160px;
+        animation: Football-boot-kick infinite 1s ease-in-out;
+        align-self: flex-start;
+    }
+}
+
+@keyframes Football-up-and-down {
+    0% {
+        transform: translateY(80px);
+    }
+    50% {
+        transform: translateY(-60px);
+    }
+    100% {
+        transform: translateY(80px); 
+    }
+}
+
+@keyframes Football-boot-kick {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
