@@ -1,10 +1,12 @@
 import React from 'react';
 
+/*-- components --*/
 import NavigationHeader from './Components/NavigationHeader';
 import ContentView from './Containers/Content';
-
-import './App.css';
 import PlayerTab from './Containers/PlayerTab';
+
+/*-- styles --*/
+import './App.css';
 
 function App() {
   return (
