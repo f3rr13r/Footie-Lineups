@@ -17,7 +17,7 @@ class ContentView extends PureComponent<ContentProps, {}> {
     render() {
         const {fixture, onClick} = this.props;
         return (
-        <div className="container">
+        <div className="content container">
             //@ts-ignore
             <Fixture fixture={fixture} onClick={onClick}/>
         </div>)
@@ -30,7 +30,7 @@ const mapStateToProps = (state) => ({
         pending: state.fixtureReducer.pending,
         fixture: state.fixtureReducer.fixture,
         error: state.fixtureReducer.error,
-      })
+    })
 
 
 

@@ -1,4 +1,4 @@
-import { GET_PLAYER_DETAIL, GET_PLAYER_DETAIL_SUCCESS, GET_PLAYER_DETAIL_FAILURE } from '../Actions/GetPlayerDetail';
+import { GET_PLAYER_DETAIL, GET_PLAYER_DETAIL_SUCCESS, GET_PLAYER_DETAIL_FAILURE, CLEAR_PLAYER_DETAIL } from '../Actions/GetPlayerDetail';
 
 const initialState = {
     pending: false,
@@ -21,6 +21,10 @@ export default function playerDetail(state = initialState, action: any) {
             return Object.assign({}, state, {
                 pending: action.pending,
                 error: action.error
+            })
+        case CLEAR_PLAYER_DETAIL:
+            return Object.assign({}, state, {
+                playerDetail: action.playerDetail
             })
         default: return state
     }

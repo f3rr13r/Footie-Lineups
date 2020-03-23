@@ -50,3 +50,14 @@ export function getPlayerDetailFailure(error: Error) {
         error: error
     }
 }
+
+export const CLEAR_PLAYER_DETAIL = 'CLEAR_PLAYER_DETAIL';
+
+export function clearPlayerDetail() {
+    return {
+        type: CLEAR_PLAYER_DETAIL,
+        pending: false,
+        playerDetail: null,
+        error: null
+    }
+}
