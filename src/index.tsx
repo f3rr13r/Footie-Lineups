@@ -19,7 +19,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 /*-- styles --*/
-import 'normalize.css';
+//import 'normalize.css';
 import './index.css';
 
 const store = createStore(reducer, applyMiddleware(thunk));

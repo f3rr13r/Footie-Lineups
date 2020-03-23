@@ -36,13 +36,15 @@ const Team = ({ onClick, team }: TeamProps) => {
 
     return (
         <div className="team">
-            <h2>{team.name}</h2>
-            <p>{getHomeAwayString()}</p>
-            <div className="team__background">
-                <img src={goalPost} alt="goal post"/>
-                <div className="team__formation">{
+            <div className="team__header">
+                <h2>{team.name}</h2>
+                <p>{getHomeAwayString()}</p>
+            </div>
+            <div className="team__content">
+                <img className="team__content__goal-post" src={goalPost} alt="goal post"/>
+                <div className="team__content__formation">{
                     team && getTeamFormationRows().map((row: PlayerModel[], rowIndex) => {
-                        return <div key={rowIndex} className="team__formation__row">{
+                        return <div key={rowIndex} className="team__content__formation__row">{
                             row.map((player: PlayerModel) => {
                                 return <Player key={player.playerId} onClick={onClick} player={player}/>
                             })
