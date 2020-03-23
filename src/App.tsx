@@ -6,7 +6,7 @@ import ContentView from './Containers/Content';
 import PlayerTab from './Containers/PlayerTab';
 
 /*-- styles --*/
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

@@ -28,7 +28,7 @@ module.exports = {
             },
             {
                 test: /\.(css$|scss$)/,
-                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }]
+                use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'sass-loader' }]
             },
             {
                 test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,

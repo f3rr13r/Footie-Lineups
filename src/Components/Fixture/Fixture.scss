@@ -1,6 +1,38 @@
+@import '../../Styles/breakpoints.scss';
+
 .fixture {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, mimax(1fr 560px));
+    grid-template-rows: repeat(auto-fit, 1fr);
+    align-content: center;
+
+    &__team {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__vs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 120px; 
+    }
+}
+
+@include for-desktop {
+    .fixture {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+
+        &__team {
+            flex-direction: row;
+        }
+
+        &__vs {
+            height: 100%;
+            width: 60px;
+        }
+    }
 }

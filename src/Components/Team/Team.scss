@@ -4,6 +4,7 @@
     align-items: center;
     border: 1px solid darkgray;
     border-radius: 4px;
+    flex: 1;
 
     &__header,
     &__content {
@@ -18,7 +19,7 @@
 
     &__header {
         align-items: flex-start;
-        background-color: darkgray;
+        background-color: #000;
         padding: 12px;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
@@ -41,14 +42,14 @@
         &__formation,
         &__formation__row {
             display: grid;
+            width: 100%;
         }
 
         &__formation {
             grid-auto-rows: auto;
-            grid-gap: 20px;
 
             &__row {
-                grid-template-columns: repeat(auto-fit, minmax(auto, 100px));
+                grid-template-columns: repeat(auto-fit, minmax(0, auto));
                 justify-content: center; 
             }
         }

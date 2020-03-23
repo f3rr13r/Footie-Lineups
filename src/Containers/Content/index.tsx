@@ -17,7 +17,7 @@ class ContentView extends PureComponent<ContentProps, {}> {
     render() {
         const {fixture, onClick} = this.props;
         return (
-        <div className="fixture container">
+        <div className="container">
             //@ts-ignore
             <Fixture fixture={fixture} onClick={onClick}/>
         </div>)

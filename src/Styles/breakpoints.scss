@@ -2,6 +2,6 @@
     @media (min-width: 600px) { @content; }
 }
 
-@mixin desktop-up {
+@mixin for-desktop {
     @media (min-width: 1200px) { @content; }
 }

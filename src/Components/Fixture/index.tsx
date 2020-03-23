@@ -18,8 +18,13 @@ type FixtureProps = {
 const Fixture = ({ onClick, fixture }: FixtureProps) => {
     return(
         <div className="fixture">{
-            fixture && fixture.teams.map((team: TeamModel) => 
-                <Team key={team.name} onClick={onClick} team={team} />
+            fixture && fixture.teams.map((team: TeamModel, index: number) =>
+                <div className="fixture__team">
+                    <Team key={team.name} onClick={onClick} team={team} />
+                    { index === 0 &&
+                        <h2 className="fixture__vs">VS</h2>
+                    }
+                </div>
             )
         }</div>
     ) 

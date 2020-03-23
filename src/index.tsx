@@ -20,7 +20,7 @@ import * as serviceWorker from './serviceWorker';
 
 /*-- styles --*/
 //import 'normalize.css';
-import './index.css';
+import './index.scss';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 //@ts-ignore
