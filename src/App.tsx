@@ -15,9 +15,7 @@ function App() {
       // @ts-ignore
       <ContentView />
       // @ts-ignore
-      <PlayerTab homeTeam={true}/>
-      // @ts-ignore
-      <PlayerTab homeTeam={false}/>
+      <PlayerTab/>
     </div>
   );
 }

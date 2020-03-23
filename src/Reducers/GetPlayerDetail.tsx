@@ -3,6 +3,8 @@ import { GET_PLAYER_DETAIL, GET_PLAYER_DETAIL_SUCCESS, GET_PLAYER_DETAIL_FAILURE
 const initialState = {
     pending: false,
     playerDetail: null,
+    homeTeam: null,
+    teamName: null,
     error: null
 }
 
@@ -15,7 +17,9 @@ export default function playerDetail(state = initialState, action: any) {
         case GET_PLAYER_DETAIL_SUCCESS:
             return Object.assign({}, state, {
                 pending: action.pending,
-                playerDetail: action.playerDetail
+                playerDetail: action.playerDetail,
+                homeTeam: action.homeTeam,
+                teamName: action.teamName
             });
         case GET_PLAYER_DETAIL_FAILURE:
             return Object.assign({}, state, {
@@ -24,7 +28,9 @@ export default function playerDetail(state = initialState, action: any) {
             })
         case CLEAR_PLAYER_DETAIL:
             return Object.assign({}, state, {
-                playerDetail: action.playerDetail
+                playerDetail: action.playerDetail,
+                homeTeam: action.homeTeam,
+                teamName: action.teamName
             })
         default: return state
     }

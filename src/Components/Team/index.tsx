@@ -7,7 +7,7 @@ import PlayerModel from '../../Models/player';
 import './Team.scss';
 
 type TeamProps = {
-    onClick: (id: string) => void,
+    onClick: (id: string, homeTeam: boolean, teamName: string) => void,
     team: TeamModel
 }
 
@@ -46,7 +46,7 @@ const Team = ({ onClick, team }: TeamProps) => {
                     team && getTeamFormationRows().map((row: PlayerModel[], rowIndex) => {
                         return <div key={rowIndex} className="team__content__formation__row">{
                             row.map((player: PlayerModel) => {
-                                return <Player key={player.playerId} onClick={onClick} player={player}/>
+                                return <Player key={player.playerId} onClick={onClick} player={player} homeTeam={team.homeTeam} teamName={team.name}/>
                             })
                         }</div>
                     })

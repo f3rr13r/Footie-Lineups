@@ -11,7 +11,7 @@ import TeamModel from '../../Models/team';
 import './Fixture.scss';
 
 type FixtureProps = {
-    onClick: (id: string) => void,
+    onClick: (id: string, homeTeam: boolean, teamName: string) => void,
     fixture: FixtureModel
 }
 

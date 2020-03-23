@@ -6,22 +6,116 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    padding: 100px 24px 24px;
+    padding: 80px 0 24px;
 
-    &__close,
-    &__title,
+    &__header,
     &__body {
         display: flex;
+        padding: 24px;
+
+        * {
+            margin: 0;
+        }
     }
 
-    &__close button {
-        width: 40px;
-        height: 40px;
+    &__header,
+    &__body,
+    &__body__stats {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 
-        img {
+    &__header {
+        background-color: black;
+
+        button {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 20px;
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        h1,
+        p {
+            color: white;
             width: 100%;
-            height: 100%;
+        }
+
+        h1 {
+            padding: 12px 0 8px;
+        }
+    }
+
+    &__body {
+        &__icon {
+            width: 60%;
             object-fit: contain;
+            border: 1px solid darkgray;
+            padding: 12px;
+            border-radius: 4px;
+        }
+
+        &__stats {
+            padding: 24px 0;
+
+            &__row {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                height: fit-content;
+                padding: 16px 0;
+
+                h4,
+                &__items {
+                    flex: 1;
+                }
+
+                h4 {
+                    text-align: left;
+                }
+
+                &__items {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(0, 20px));
+                    justify-content: flex-end;
+                    grid-gap: 2px;
+
+                    .cap,
+                    .ball {
+                        object-fit: contain;
+                    }
+
+                    .cap {
+                        width: 20px;
+                    }
+
+                    .ball {
+                        width: 18px;
+                    }
+
+                    .card {
+                        width: 16px;
+                        height: 24px;
+                        border: 1px solid #000;
+                        border-radius: 2px;
+
+                        &--yellow {
+                            background-color: yellow;
+                        }
+
+                        &--red {
+                            background-color: red;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -34,8 +128,15 @@
             left: 0%;
         }
 
-        .player-tab__close {
-            justify-content: flex-end;
+        .player-tab__header {
+            button {
+                align-self: flex-end;
+            }
+
+            h1,
+            p {
+                text-align: left;
+            }
         }
     }
 
@@ -46,6 +147,17 @@
 
         &.player-tab--visible {
             right: 0%;
+        }
+
+        .player-tab__header {
+            button {
+                align-self: flex-start;
+            }
+
+            h1,
+            p {
+                text-align: right;
+            }
         }
     }
 }

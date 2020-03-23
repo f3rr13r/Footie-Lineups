@@ -8,14 +8,14 @@ import FixtureModel from '../../Models/fixture';
 import './Content.scss';
 
 type ContentProps = {
-    onClick: (id: string) => void,
+    onClick: (id: string, homeTeam: boolean, teamName: string) => void,
     fixture: FixtureModel
 }
 
 class ContentView extends PureComponent<ContentProps, {}> {
 
     render() {
-        const {fixture, onClick} = this.props;
+        const { fixture, onClick } = this.props;
         return (
         <div className="content container">
             //@ts-ignore
@@ -35,9 +35,9 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-      onClick: (id: string) => {
-        dispatch(getPlayerDetail(id))
-      }
+      onClick: (id: string, homeTeam: boolean, teamName: string) => {
+        dispatch(getPlayerDetail(id, homeTeam, teamName))
+      },
   })
 
 export default connect<{}, {}, {}>(mapStateToProps, mapDispatchToProps)(ContentView);
