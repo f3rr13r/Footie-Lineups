@@ -1,0 +1,47 @@
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &__background {
+        //background-image: url(../../Assets/football-pitch.png);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: top;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        img {
+            width: 100px;
+        }
+    }
+
+    &__formation,
+    &__formation__row {
+        display: grid;
+    }
+
+    &__background img 
+    &__formation {
+        position: absolute;
+        top: 0;
+    }
+
+    &__formation {
+        right: 0;
+        bottom: 0;
+        left: 0;
+        grid-auto-rows: auto;
+        grid-gap: 20px;
+        z-index: 2;
+
+        &__row {
+            grid-template-columns: repeat(auto-fit, minmax(5px, auto));
+            justify-content: center;
+        }
+    }
+}

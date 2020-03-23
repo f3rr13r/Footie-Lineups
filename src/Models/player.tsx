@@ -1,7 +1,7 @@
 import Deserializable from "./deserializable";
 
 class Player implements Deserializable {
-    id: string;
+    playerId: string;
     position: string;
 
     deserialize(input: any): this {

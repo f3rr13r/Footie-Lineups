@@ -1,23 +1,36 @@
 import PlayerDetail from "../Models/playerInfo";
 
+import axios from 'axios';
+
+
 /*
  * action types
  */
- export const GET_PLAYER_DETAIL = 'GET_PLAYER_DETAIL';
- export const GET_PLAYER_DETAIL_SUCCESS = 'GET_PLAYER_DETAIL_SUCCESS';
- export const GET_PLAYER_DETAIL_FAILURE = 'GET_PLAYER_DETAIL_FAILURE';
 
  /*
  * action creators
  */
-export function getPlayerDetail() {
-    return {
-        type: GET_PLAYER_DETAIL,
-        pending: true,
-        playerDetail: null,
-        error: null
+
+
+export const GET_PLAYER_DETAIL = 'GET_PLAYER_DETAIL';
+
+export function getPlayerDetail(playerId: string) {
+    return function(dispatch: any){
+        dispatch({type: GET_PLAYER_DETAIL,
+            pending: true})
+            return axios.get(`http://dev.webuildbots.ai:9123/players?playerId=${playerId}&token=${process.env.REACT_APP_APPLICATIONKEY}`)
+        .then((response) => {
+            const playerDetail: PlayerDetail = new PlayerDetail().deserialize(response.data);
+             dispatch(getPlayerDetailSuccess(playerDetail));
+        })
+        .catch((error) => {
+            dispatch(getPlayerDetailFailure(error));
+        })
     }
+    
 }
+
+export const GET_PLAYER_DETAIL_SUCCESS = 'GET_PLAYER_DETAIL_SUCCESS';
 
 export function getPlayerDetailSuccess(playerDetail: PlayerDetail) {
     return {
@@ -27,6 +40,7 @@ export function getPlayerDetailSuccess(playerDetail: PlayerDetail) {
         error: null
     }
 }
+export const GET_PLAYER_DETAIL_FAILURE = 'GET_PLAYER_DETAIL_FAILURE';
 
 export function getPlayerDetailFailure(error: Error) {
     return {

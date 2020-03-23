@@ -1,0 +1,9 @@
+.player,
+.player img {
+    width: inherit;
+    height: inherit;
+}
+
+.player img {
+    object-fit: contain;
+}

@@ -10,9 +10,12 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import './index.css';
+import { getFixture } from './Actions/GetFixture';
 
-const middlewares = [thunk];
-const store = createStore(reducer, applyMiddleware(...middlewares));
+const store = createStore(reducer, applyMiddleware(thunk));
+//@ts-ignore
+store.dispatch(getFixture())
+
 ReactDOM.render(
     <Provider store={store}>
         <App />

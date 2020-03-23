@@ -1,17 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import PlayerModel from '../../Models/player';
 import footballPlayer from '../../Assets/soccer-player.png';
 
-const Player = ({ onClick, player: PlayerModel }) => {
-    <button onClick={onClick}>
-        <img src={footballPlayer} alt="player icon"/>
-    </button>
-}
+import './Player.scss';
 
-Player.propTypes = {
-    onClick: PropTypes.func.isRequired,
+type PlayerProps = {
+    onClick: (id: string) => void,
     player: PlayerModel
 }
+
+const Player = ({ onClick,  player }: PlayerProps) => {
+    return(
+        <button className="player" onClick={() => onClick(player.playerId)}>
+            <img src={footballPlayer} alt="player icon"/>
+            <h2>{player.position}</h2>
+        </button>
+    )
+}
+
 
 export default Player

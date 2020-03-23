@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import FixtureReducer from './GetFixture';
-import PlayerDetailReducer from './GetPlayerDetail';
+import fixtureReducer from './GetFixture';
+import playerDetailReducer from './GetPlayerDetail';
 
 const reducer = combineReducers({
-    FixtureReducer,
-    PlayerDetailReducer
+    fixtureReducer,
+    playerDetailReducer
 });
 
 export default reducer

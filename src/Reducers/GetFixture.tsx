@@ -6,7 +6,7 @@ const initialState = {
     error: null
 }
 
-export default function fixture(state = initialState, action: any) {
+const fixture = (state = initialState, action: any) => {
     switch (action.type) {
         case GET_FIXTURE:
             return Object.assign({}, state, {
@@ -25,3 +25,5 @@ export default function fixture(state = initialState, action: any) {
         default: return state
     }
 }
+
+export default fixture;
