@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 import {getPlayerDetail} from '../../Actions/GetPlayerDetail';
 import Fixture from '../../Components/Fixture';
 import FixtureModel from '../../Models/fixture';
-import Loading from '../../Components/AnimatedLogo';
 
 import './Content.scss';
 
 type ContentProps = {
     onClick: (id: string, homeTeam: boolean, teamName: string) => void,
-    fixture: FixtureModel
+    fixture: FixtureModel;
 }
 
 class ContentView extends PureComponent<ContentProps, {}> {
@@ -40,4 +39,4 @@ const mapDispatchToProps = (dispatch: any) => ({
       },
   })
 
-export default connect<{}, {}, {}>(mapStateToProps, mapDispatchToProps)(ContentView);
+export default connect<any, any, any>(mapStateToProps, mapDispatchToProps)(ContentView);

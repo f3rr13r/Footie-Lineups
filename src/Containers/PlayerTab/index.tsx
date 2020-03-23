@@ -110,4 +110,4 @@ const mapDispatchToProps = (dispatch: any) => ({
       }
   })
 
-export default connect<{}, {}, {}>(mapStateToProps, mapDispatchToProps)(PlayerTabView);
+export default connect<any, any, any>(mapStateToProps, mapDispatchToProps)(PlayerTabView);

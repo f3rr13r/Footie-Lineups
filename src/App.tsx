@@ -12,10 +12,8 @@ function App() {
   return (
     <div className="App">
       <NavigationHeader />
-      // @ts-ignore
       <ContentView />
-      // @ts-ignore
-      <PlayerTab/>
+      <PlayerTab />
     </div>
   );
 }
