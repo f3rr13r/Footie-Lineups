@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {getPlayerDetail} from '../../Actions/GetPlayerDetail';
 import Fixture from '../../Components/Fixture';
 import FixtureModel from '../../Models/fixture';
+import Loading from '../../Components/AnimatedLogo';
 
 import './Content.scss';
 
@@ -18,7 +19,6 @@ class ContentView extends PureComponent<ContentProps, {}> {
         const { fixture, onClick } = this.props;
         return (
         <div className="content container">
-            //@ts-ignore
             <Fixture fixture={fixture} onClick={onClick}/>
         </div>)
     }

@@ -1,3 +1,5 @@
+@import '../../Styles/breakpoints.scss';
+
 .player-tab {
     width: 100%;
     max-width: 500px;
@@ -30,10 +32,10 @@
         background-color: black;
 
         button {
-            width: 40px;
-            height: 40px;
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
             background-color: white;
-            border-radius: 20px;
     
             img {
                 width: 100%;
@@ -55,7 +57,7 @@
 
     &__body {
         &__icon {
-            width: 60%;
+            width: 30%;
             object-fit: contain;
             border: 1px solid darkgray;
             padding: 12px;
@@ -159,5 +161,17 @@
                 text-align: right;
             }
         }
+    }
+}
+
+@include for-desktop {
+    .player-tab__header button {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+
+    .player-tab__body__icon {
+        width: 60%;
     }
 }

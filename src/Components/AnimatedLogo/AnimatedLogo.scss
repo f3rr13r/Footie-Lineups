@@ -1,16 +1,18 @@
-.loading {
+.animated-logo {
     display: flex;
     flex-direction: column;
-    width: 190px;
+    width: 70px;
+    position: relative;
+    top: -14px;
 
     .football {
-        max-width: 100px;
+        max-width: 40px;
         animation: Football-up-and-down infinite 1s ease-in-out;
         align-self: flex-end;
     }
 
     .boot {
-        max-width: 160px;
+        max-width: 50px;
         animation: Football-boot-kick infinite 1s ease-in-out;
         align-self: flex-start;
     }
@@ -18,13 +20,13 @@
 
 @keyframes Football-up-and-down {
     0% {
-        transform: translateY(80px);
+        transform: translateY(30px);
     }
     50% {
-        transform: translateY(-60px);
+        transform: translateY(-40px);
     }
     100% {
-        transform: translateY(80px); 
+        transform: translateY(30px); 
     }
 }
 
